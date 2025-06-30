@@ -6,10 +6,10 @@ pipeline{
     }
 
     environment{
-        GIT_REPO_URL = "https://github.com/Sagar-Soin/MY_DEVOPS-PROJECT-1.git"
-        IMAGE_NAME = "my-nginx-app-jfrog"
-        IMAGE_ID = "v1"
-        ARTIFACTORY_URL = "https://trialfd07jy.jfrog.io/artifactory/api/docker/sagar-my-nginx-jfrog"
+        GIT_REPO_URL = 'https://github.com/Sagar-Soin/MY_DEVOPS-PROJECT-1.git'
+        IMAGE_NAME = 'my-nginx-app-jfrog'
+        IMAGE_ID = 'v1'
+        ARTIFACTORY_URL = 'https://trialfd07jy.jfrog.io/artifactory/api/docker/sagar-my-nginx-jfrog'
     }
 
     stages{
