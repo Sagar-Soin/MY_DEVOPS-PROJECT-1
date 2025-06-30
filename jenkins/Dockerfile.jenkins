@@ -1,0 +1,17 @@
+ARG VERSION=latest
+FROM jenkins/jenkins:${VERSION}
+LABEL name=sagarsoin
+USER root
+RUN apt update && \
+    apt-get install vim tree net-tools iputils-ping sudo git -y
+RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
+    sudo sh get-docker.sh
+RUN groupmod -g 988 docker || true && \
+    usermod -aG docker jenkins
+
+RUN echo 'jenkins:jenkins123' | chpasswd && \
+    usermod -aG sudo jenkins && \
+    echo "jenkins ALL=(ALL) ALL" >> /etc/sudoers
+RUN chown jenkins:jenkins /var/jenkins_home -R
+EXPOSE 8080
+USER jenkins

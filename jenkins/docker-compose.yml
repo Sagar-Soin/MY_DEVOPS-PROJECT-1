@@ -1,0 +1,17 @@
+name: project1-jenkins
+services:
+  myjenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
+    container_name: myjenkins_container
+    image: myjenkins_image_project1
+    ports:
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - myjenkins_vol:/var/jenkins_home
+
+volumes:
+  myjenkins_vol:
+

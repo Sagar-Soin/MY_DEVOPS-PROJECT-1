@@ -1,0 +1,8 @@
+cd /home/ubuntu/DOCKER/Project-1/jenkins/
+docker compose up -d
+
+then cd /home/ubuntu/DOCKER/Project-1/nginx/
+
+Copy Dockerfile,  docker-compose.yml  for nginx > /var/jenkins_home/workspace/Pipelinename/
+
+docker compose up -d
